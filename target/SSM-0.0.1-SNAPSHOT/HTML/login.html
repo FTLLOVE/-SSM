@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <script src="../JQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../BootStrap/css/bootstrap.min.css" type="text/css">
+    <script src="registerChecked.js" type="text/javascript"></script>
+    <script src="../BootStrap/js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+<style type="text/css">
+    body {
+        margin-top: 30px;
+    }
+
+    .btn-info {
+        color: #fff;
+        background-color: #5bc0de;
+        border-color: #46b8da;
+        margin-left: 320px;
+        margin-top: 15px;
+    }
+
+    .btn-success {
+        color: #fff;
+        background-color: #5cb85c;
+        border-color: #4cae4c;
+        margin-left: 15px;
+        margin-top: 15px;
+
+    }
+
+    .alert {
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+
+    .form-control {
+        margin-top: 2px;
+        display: block;
+        width: 60%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    }
+</style>
+<body background="../Images/背景图片2.jpg">
+<div class="container">
+    <fieldset>
+        <legend>
+            <label class="glyphicon glyphicon-user">
+                <label>
+                    用户登录
+                    <label style="font-size: 10px;color: #5e5e5e">(就学习而言，重要的不是你花了多少钱，而是你投入了多少时间和精力)</label>
+                </label>
+            </label>
+        </legend>
+        <form action="http://www.baidu.com" class="form-horizontal" role="form" id="formLogin">
+            <div class="form-group" id="userNameDiv">
+                <label class="col-md-3 control-label" for="userName">用户名:</label>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" id="userName" name="userName" placeholder="enter your name">
+                </div>
+                <div class="col-md-4" id="userNameSpan">
+                    <span></span>
+                </div>
+
+            </div>
+
+
+            <div class="form-group" id="passwordDiv">
+                <label class="col-md-3 control-label">密　码:</label>
+                <div class="col-md-5">
+                    <input type="password" class="form-control" id="password" name="password"
+                           placeholder="enter your password">
+                </div>
+                <div class="col-md-4" id="passwordSpan">
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <button type="reset" class="btn btn-info" id="cancel" name="cancel">注册</button>
+                    <button type="submit" class="btn btn-success" id="success" name="success">登录</button>
+                </div>
+            </div>
+        </form>
+    </fieldset>
+
+</div>
+</body>
+</html>

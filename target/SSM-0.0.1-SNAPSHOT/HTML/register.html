@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <script src="../JQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../BootStrap/css/bootstrap.min.css" type="text/css">
+    <script src="../BootStrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="registerChecked.js" type="text/javascript"></script>
+</head>
+<style type="text/css">
+    body {
+        margin-top: 30px;
+    }
+
+    .form-control {
+        margin-top: 2px;
+        display: block;
+        width: 60%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    }
+
+    .btn-danger {
+        color: #fff;
+        background-color: #d9534f;
+        border-color: #d43f3a;
+        margin-left: 300px;
+        margin-top: 15px;
+    }
+
+    .btn-success {
+        color: #fff;
+        background-color: #5cb85c;
+        border-color: #4cae4c;
+        margin-left: 15px;
+        margin-top: 15px;
+
+    }
+
+    .alert {
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+</style>
+<script type="text/javascript">
+
+    // 获取复选框里面的值
+    function methods1() {
+        var s = '';
+        $('input[type=checkbox]:checked').each(function () {
+            s += $(this).val() + ",";
+        });
+        return s;
+    }
+
+    window.onload = function () {
+        $("#success").click(function () {
+            var nameVal = $('input[name="userName"]').val();
+            var pwdVal = $('input[type=password]').val();
+            var sexVal = $('input[name="sex"]:checked').val();
+            var hobbyVal = methods1();
+            var cityVal = $('select option:checked').val();
+            var areaVal = $('textarea').val();
+            window.alert("用户名:" + nameVal + "\n 密码:" + pwdVal + "\n性别:" + sexVal + "\n选中的爱好:" + hobbyVal + "\n城市:" + cityVal + "\n备注:" + areaVal);
+        });
+
+
+    };
+</script>
+<body background="../Images/背景图片2.jpg">
+<div class="container">
+    <fieldset>
+        <legend>
+            <label class="glyphicon glyphicon-user">
+                <label>
+                    用户注册
+                    <label style="font-size: 10px;color: #5e5e5e">(就学习而言，重要的不是你花了多少钱，而是你投入了多少时间和精力)</label>
+                </label>
+            </label>
+        </legend>
+
+        <form action="http://www.baidu.com" class="form-horizontal" role="form" id="formLogin">
+
+            <div class="form-group" id="userNameDiv">
+                <label class="col-md-3 control-label" for="userName">用户名:</label>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" id="userName" name="userName" placeholder="enter your name">
+                </div>
+                <div class="col-md-4" id="userNameSpan">
+                    <span>
+
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group" id="passwordDiv">
+                <label class="col-md-3 control-label">密　码:</label>
+                <div class="col-md-5">
+                    <input type="password" class="form-control" id="password" name="password"
+                           placeholder="enter your password">
+                </div>
+                <div class="col-md-4" id="passwordSpan">
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="form-group" id="confirmPwdDiv">
+                <label class="col-md-3 control-label">确认密码:</label>
+                <div class="col-md-5">
+                    <input type="password" class="form-control" id="confirmPwd" name="confirmPwd"
+                           placeholder="enter your password">
+                </div>
+                <div class="col-md-4" id="confirmPwdSpan">
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="form-group" id="sexDiv">
+                <label class="col-md-3 control-label">性　别:</label>
+                <div class="col-md-5" id="sex">
+                    <label class="radio-inline">
+                        <input type="radio" name="sex" id="male" value="male" checked>male
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="sex" id="female" value="female">female
+                    </label>
+                </div>
+                <div class="col-md-4" id="sexSpan">
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="form-group" id="hobbyDiv">
+                <label class="col-md-3 control-label">爱　好:</label>
+                <div class="col-md-5" id="hobby">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="basketball" value="basketball" name="checkbox" checked> 篮球
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="soccer" value="soccer" name="checkbox"> 足球
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="table-tennis" value="table-tennis" name="checkbox"> 乒乓球
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="badminton" value="badminton" name="checkbox"> 羽毛球
+                    </label>
+                </div>
+                <div class="col-md-4" id="hobbySpan">
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="form-group" id="cityDiv">
+                <label class="col-md-3 control-label">城　市:</label>
+                <div class="col-md-5" id="city">
+                    <select>
+                        <option name="beijing" id="beijing">北京</option>
+                        <option name="shanghai" id="shanghai">上海</option>
+                        <option name="nanjing" id="nanjing">南京</option>
+                        <option name="shenzhen" id="shenzhen">深圳</option>
+                        <option name="chongqing" id="chongqing">重庆</option>
+                    </select>
+                </div>
+                <div class="col-md-4" id="citySpan">
+                    <span></span>
+                </div>
+            </div>
+
+
+            <div class="form-group" id="tipDiv">
+                <label class="col-md-3 control-label">备　注:</label>
+                <div class="col-md-5" id="tip">
+                    <textarea>
+                    </textarea>
+                </div>
+                <div class="col-md-4" id="tipSpan">
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <button type="reset" class="btn btn-danger" id="cancel" name="cancel">取消</button>
+                    <button type="submit" class="btn btn-success" id="success" name="success">注册</button>
+                </div>
+            </div>
+        </form>
+    </fieldset>
+
+</div>
+</body>
+</html>
